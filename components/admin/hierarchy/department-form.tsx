@@ -1,0 +1,70 @@
+"use client";
+
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { createDepartment } from "@/app/dashboard/hierarchy/actions";
+import { Plus } from "lucide-react";
+
+interface College {
+  id: string;
+  name: string;
+  code: string;
+}
+
+export function DepartmentForm({ colleges }: { colleges: College[] }) {
+  const [open, setOpen] = useState(false);
+
+  async function action(formData: FormData) {
+    await createDepartment(formData);
+    setOpen(false);
+  }
+
+  return (
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <Button className="w-full justify-start" variant="outline">
+          <Plus className="mr-2 h-4 w-4" /> Add Department
+        </Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Add Department</DialogTitle>
+        </DialogHeader>
+        <form action={action} className="space-y-3">
+          <Select name="collegeId" required>
+            <SelectTrigger>
+              <SelectValue placeholder="Select College" />
+            </SelectTrigger>
+            <SelectContent>
+              {colleges.map((c) => (
+                <SelectItem key={c.id} value={c.id}>
+                  {c.name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <Input name="name" placeholder="Department Name" required />
+          <Input name="code" placeholder="Dept Code (e.g. CS)" required />
+          <Button type="submit" className="w-full">
+            Create
+          </Button>
+        </form>
+      </DialogContent>
+    </Dialog>
+  );
+}
