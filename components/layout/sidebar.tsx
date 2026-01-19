@@ -19,7 +19,7 @@ export async function Sidebar() {
           <h2 className="text-xl font-bold text-blue-500 leading-none">
             Jigjiga University
           </h2>
-          <p className="text-xs text-blue-600 font-semibold mt-1">
+          <p className="text-xs text-gray-900 font-semibold mt-1">
             Class Management System
           </p>
         </div>
