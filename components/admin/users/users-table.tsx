@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Trash2, Edit, Search } from "lucide-react";
 import { deleteUser } from "@/app/dashboard/users/actions";
-import { Role } from "@/lib/generated/prisma/enums";
+import { Role } from "@prisma/client";
 import { Badge } from "@/components/ui/badge";
 
 interface User {

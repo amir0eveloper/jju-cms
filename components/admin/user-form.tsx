@@ -19,7 +19,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { createUser } from "@/app/dashboard/users/actions";
-import { Role } from "@/lib/generated/prisma/enums";
+import { Role } from "@prisma/client";
 
 interface Section {
   id: string;

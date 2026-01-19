@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, BookOpen, Building2, GraduationCap } from "lucide-react";
 import { db } from "@/lib/db";
-import { Role } from "@/lib/generated/prisma";
+import { Role } from "@prisma/client";
 
 export async function AdminStats() {
   const [studentCount, teacherCount, courseCount, deptCount] =

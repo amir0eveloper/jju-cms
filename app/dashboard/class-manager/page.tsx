@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { Role } from "@/lib/generated/prisma";
+import { Role } from "@prisma/client";
 import { redirect } from "next/navigation";
 import {
   getManagerCourses,

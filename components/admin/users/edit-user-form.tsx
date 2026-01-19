@@ -20,7 +20,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { updateUser } from "@/app/dashboard/users/actions";
-import { Role } from "@/lib/generated/prisma/enums";
+import { Role } from "@prisma/client";
 
 interface User {
   id: string;

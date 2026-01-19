@@ -1,8 +1,7 @@
 "use server";
 
 import { db } from "@/lib/db";
-import { Role } from "@/lib/generated/prisma";
-import { Prisma } from "@/lib/generated/prisma";
+import { Role, Prisma } from "@prisma/client";
 import ExcelJS from "exceljs";
 import { revalidatePath } from "next/cache";
 import bcrypt from "bcrypt";

@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { Role } from "@/lib/generated/prisma";
+import { Role } from "@prisma/client";
 import StudentDashboard from "@/components/dashboard/student-dashboard";
 import TeacherDashboard from "@/components/dashboard/teacher-dashboard";
 import {

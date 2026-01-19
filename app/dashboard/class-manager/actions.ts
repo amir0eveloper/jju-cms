@@ -3,7 +3,7 @@
 import { db } from "@/lib/db";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { Role } from "@/lib/generated/prisma"; // Adjust import path
+import { Role } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 
 export async function getDashboardStats() {

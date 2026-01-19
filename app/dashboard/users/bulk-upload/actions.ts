@@ -1,7 +1,7 @@
 "use server";
 
 import { db } from "@/lib/db";
-import { Role } from "@/lib/generated/prisma";
+import { Role } from "@prisma/client";
 import bcrypt from "bcrypt";
 import { revalidatePath } from "next/cache";
 
